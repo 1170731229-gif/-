@@ -1,0 +1,13 @@
+
+=== Test run: 2026-05-30 21:40:25 ===
+waiting for server...
+server not up
+
+=== Test run: 2026-05-30 21:42:20 ===
+waiting for server...
+calling /api/recommend
+recommend error HTTPConnectionPool(host='127.0.0.1', port=8000): Read timed out. (read timeout=20)
+
+calling /api/backtest_batch
+backtest_batch error HTTPConnectionPool(host='127.0.0.1', port=8000): Read timed out. (read timeout=120)
+=== End run ===
