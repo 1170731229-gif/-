@@ -1,0 +1,39 @@
+Terminal 124fb3a0-6cb2-495d-aa48-4a300dd4c56b session transcript:
+PS D:\2652> ..\venv\Scripts\python.exe lianghua\quantplus\test_api.py
+..\venv\Scripts\python.exe : 无法将“..\venv\Scripts\python.exe”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。请检查名称的拼写，如果包括路径，请确保路径正确，然后再试一次。
+所在位置 行:1 字符: 1
++ ..\venv\Scripts\python.exe lianghua\quantplus\test_api.py
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (..\venv\Scripts\python.exe:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS D:\2652> D:\2652\lianghua\venv\Scripts\python.exe D:\2652\lianghua\quantplus\test_api.py
+waiting for server...
+calling /api/recommend
+recommend status 200
+{"success":true,"stocks":[]}
+
+calling /api/backtest_batch
+backtest_batch status 200
+{"success":true,"results":[{"success":true,"symbol":"002475","log":"初始资金: 20000.00\n2025-05-30 [建仓] 底仓100股 开盘价:30.89\n2025-06-03 [买入] 价格:30.19 数量:100\n2026-05-29 [策略结束] 平仓卖 出100股\n最终资金: 24306.98\n","final_value":24306.981,"profit":4306.981,"profit_pct":21.534905}]}
+PS D:\2652> lianghua\venv\Scripts\python.exe lianghua\quantplus\test_api.py
+waiting for server...
+server not up
+PS D:\2652> lianghua\venv\Scripts\python.exe lianghua\quantplus\test_api.py
+waiting for server...
+calling /api/recommend
+recommend error HTTPConnectionPool(host='127.0.0.1', port=8000): Read timed out. (read timeout=20)
+
+calling /api/backtest_batch
+backtest_batch error HTTPConnectionPool(host='127.0.0.1', port=8000): Read timed out. (read timeout=120)
+
+--- uvicorn run info (from background terminal 83792cba) ---
+INFO:     Started server process [15220]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:13773 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13774 - "POST /api/recommend HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7948 - "POST /api/backtest_batch HTTP/1.1" 200 OK
+
+(End of captured terminal transcript.)
